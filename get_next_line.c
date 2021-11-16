@@ -6,34 +6,34 @@
 /*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 19:53:23 by ichoukri          #+#    #+#             */
-/*   Updated: 2021/11/15 18:28:02 by ahouari          ###   ########.fr       */
+/*   Updated: 2021/11/16 10:01:02 by ahouari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include<stdio.h>
-char	*change_text(char *result)
+
+char	*change_text(char *text)
 {
 	char	*newtext;
 	size_t	len;
 	size_t	i;
 
 	len = 0;
-	while (result[len] != '\n' && result[len] != '\0')
+	while (text[len] != '\n' && text[len] != '\0')
 		len++;
-	if (result[len] == '\0')
+	if (text[len] == '\0')
 	{
-		free(result);
+		free(text);
 		return (NULL);
 	}
 	i = 0;
-	newtext = (char *)malloc(sizeof(char) * (ft_strlen(result) - len + 1));
+	newtext = (char *)malloc(sizeof(char) * (ft_strlen(text) - len + 1));
 	if (newtext == NULL)
 		return (NULL);
-	while (result[++len] != '\0')
-		newtext[i++] = result[len];
+	while (text[++len] != '\0')
+		newtext[i++] = text[len];
 	newtext[i] = '\0';
-	free(result);
+	free(text);
 	return (newtext);
 }
 
@@ -100,12 +100,4 @@ char	*get_next_line(int fd)
 	line = get_line(text);
 	text = change_text(text);
 	return (line);
-}
-int main ()
-{
-	int fd;
-	fd = open("test.txt",O_RDONLY, S_IRUSR | S_IWUSR);
-	printf("%s",get_next_line(fd));
-	printf("%s",get_next_line(fd));
-	printf("%s",get_next_line(fd));
 }

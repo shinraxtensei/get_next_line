@@ -6,7 +6,7 @@
 /*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 19:53:27 by ichoukri          #+#    #+#             */
-/*   Updated: 2021/11/15 18:35:25 by ahouari          ###   ########.fr       */
+/*   Updated: 2021/11/16 10:01:27 by ahouari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #  define BUFFER_SIZE 1
 # endif
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <sys/wait.h>
 # include <string.h>
