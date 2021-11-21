@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ahouari <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 19:53:23 by ichoukri          #+#    #+#             */
-/*   Updated: 2021/11/21 08:36:41 by ahouari          ###   ########.fr       */
+/*   Created: 2021/11/21 08:47:49 by ahouari           #+#    #+#             */
+/*   Updated: 2021/11/21 08:47:53 by ahouari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,15 +89,15 @@ char	*read_line(char *text, int fd)
 
 char	*get_next_line(int fd)
 {
-	static char	*text;
+	static char	*text[4096];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	text = read_line(text, fd);
-	if (text == NULL)
+	text[fd] = read_line(text[fd], fd);
+	if (text[fd] == NULL)
 		return (NULL);
-	line = get_line(text);
-	text = change_text(text);
+	line = get_line(text[fd]);
+	text[fd] = change_text(text[fd]);
 	return (line);
 }
