@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 19:53:23 by ichoukri          #+#    #+#             */
-/*   Updated: 2021/11/21 08:36:41 by ahouari          ###   ########.fr       */
+/*   Created: 2021/11/28 08:55:33 by ahouari           #+#    #+#             */
+/*   Updated: 2021/11/28 15:11:18 by ahouari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
+#include<fcntl.h>
 char	*change_text(char *text)
 {
 	char	*newtext;
@@ -100,4 +100,15 @@ char	*get_next_line(int fd)
 	line = get_line(text);
 	text = change_text(text);
 	return (line);
+}
+
+
+int		main(int ac, char **av)
+{
+	char	*line;
+	int		fd1;
+
+	fd1 = open("file", O_RDONLY);
+	get_next_line(fd1);
+	return (0);
 }

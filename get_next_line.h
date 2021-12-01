@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ahouari <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 19:53:27 by ichoukri          #+#    #+#             */
-/*   Updated: 2021/11/20 08:26:23 by ahouari          ###   ########.fr       */
+/*   Created: 2021/11/28 08:56:14 by ahouari           #+#    #+#             */
+/*   Updated: 2021/11/28 08:56:22 by ahouari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,6 @@
 # endif
 
 # include <stdlib.h>
-# include <sys/wait.h>
-# include <string.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
 # include <unistd.h>
 
 size_t	ft_strlen(char *str);
@@ -33,6 +28,5 @@ char	*ft_strchr(char *str, int c);
 char	*read_line(char *result, int fd);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_substr(char const	*s, unsigned int start, size_t len);
-char	*ft_strdup(char *str);
 
 #endif

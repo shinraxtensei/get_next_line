@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahouari <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ahouari <ahouari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 08:47:49 by ahouari           #+#    #+#             */
-/*   Updated: 2021/11/21 08:47:53 by ahouari          ###   ########.fr       */
+/*   Updated: 2021/11/28 08:56:39 by ahouari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*change_text(char *text)
 {
@@ -89,7 +89,7 @@ char	*read_line(char *text, int fd)
 
 char	*get_next_line(int fd)
 {
-	static char	*text[4096];
+	static char	*text[10240];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
